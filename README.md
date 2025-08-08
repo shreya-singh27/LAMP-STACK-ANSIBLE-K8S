@@ -5,6 +5,7 @@ This project demonstrates automated deployment of a LAMP stack — Apache (with 
 ---
 
 ## Folder Structure
+'''
 
 lamp-ansible-project/
 │
@@ -23,7 +24,7 @@ lamp-ansible-project/
     ├── mysql-pvc.yaml
     ├── pvc.json
     └── services.yaml
-
+'''
 ---
 
 ## Project Overview
@@ -67,10 +68,10 @@ lamp-ansible-project/
 
 | Step                  | Screenshot                | Description                                         |
 |-----------------------|---------------------------|-----------------------------------------------------|
-| Docker Images Build   | `1-docker-build.png`       | Shows building of Apache-PHP and MySQL Docker images. |
-| Ansible Playbook Run  | `2-ansible-playbook.png`   | Demonstrates running Ansible playbooks to configure servers. |
-| Kubernetes Deployments| `3-k8s-deployments.png`    | Displays Kubernetes deployments of Apache and MySQL pods. |
-| Services Exposed      | `4-services-exposed.png`   | Shows services exposing Apache and MySQL outside cluster. |
+| Docker Images Build   | ![Docker Build](./screenshots/1-docker-build.png)       | Shows building of Apache-PHP and MySQL Docker images. |
+| Ansible Playbook Run  | ![Ansible Playbook](./screenshots/2-ansible-playbook.png)   | Demonstrates running Ansible playbooks to configure servers. |
+| Kubernetes Deployments| ![K8s Deployments](./screenshots/3-k8s-deployments.png)    | Displays Kubernetes deployments of Apache and MySQL pods. |
+| Services Exposed      | ![Services Exposed](./screenshots/4-services-exposed.png)   | Shows services exposing Apache and MySQL outside cluster. |
 
 ---
 
