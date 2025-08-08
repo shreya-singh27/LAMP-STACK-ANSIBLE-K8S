@@ -79,5 +79,4 @@ lamp-ansible-project/
 
 ---
 
-If you want help writing Dockerfiles or Ansible playbook examples, just ask!
 
