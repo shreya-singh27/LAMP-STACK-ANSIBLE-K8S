@@ -3,18 +3,17 @@
 This project demonstrates automated deployment of a LAMP stack — Apache (with PHP), MySQL, and Linux environment — using Ansible and Kubernetes manifests. It includes containerized services, persistent storage, and service exposure for a full-stack web app setup.
 
 ---
-
 ## Folder Structure
 
 lamp-ansible-project/
 
--ansible/                  
+- ansible/
   - playbook.yml
-  - inventory.ini               
- -docker/                   
+  - inventory.ini
+- docker/
   - Dockerfile-apache-php
   - Dockerfile-mysql
- -k8s/                      
+- k8s/
   - apache-deployment.yaml
   - mysql-deployment.yaml
   - mysql-pvc.yaml
