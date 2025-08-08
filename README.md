@@ -6,8 +6,9 @@ This project demonstrates automated deployment of a LAMP stack — Apache (with 
 
 ## Folder Structure
 
--lamp-ansible-project/
- -ansible/                  
+lamp-ansible-project/
+
+-ansible/                  
   - playbook.yml
   - inventory.ini               
  -docker/                   
