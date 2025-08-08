@@ -1,0 +1,42 @@
+- hosts: local
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Ensure Minikube running (start if needed)
+      command: minikube start --memory=4096 --cpus=2 --driver=docker
+      ignore_errors: yes
+
+    - name: Build apache image
+      command: docker build -t apache-php:latest ./docker/apache-php
+      args:
+        chdir: "{{ playbook_dir }}/.."
+
+    - name: Build mysql image
+      command: docker build -t mysql-custom:latest ./docker/mysql
+      args:
+        chdir: "{{ playbook_dir }}/.."
+
+    - name: Load apache image into minikube
+      command: minikube image load apache-php:latest
+
+    - name: Load mysql image into minikube
+      command: minikube image load mysql-custom:latest
+
+    - name: Apply Kubernetes manifests
+      command: kubectl apply -f ./k8s
+      args:
+        chdir: "{{ playbook_dir }}/.."
+
+    - name: Wait for apache rollout
+      command: kubectl rollout status deployment/apache --timeout=120s
+
+    - name: Wait for mysql rollout
+      command: kubectl rollout status deployment/mysql --timeout=120s
+
+    - name: Print app URL
+      command: minikube service apache-service --url
+      register: appurl
+
+    - debug:
+        msg: "App URL: {{ appurl.stdout_lines }}"
+
