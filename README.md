@@ -7,18 +7,18 @@ This project demonstrates automated deployment of a LAMP stack — Apache (with 
 ## Folder Structure
 
 -lamp-ansible-project/
--ansible/                  
- - playbook.yml
- - inventory.ini               
--docker/                   
- - Dockerfile-apache-php
- - Dockerfile-mysql
--k8s/                      
- - apache-deployment.yaml
- - mysql-deployment.yaml
- - mysql-pvc.yaml
- - pvc.json
- - services.yaml
+ -ansible/                  
+  - playbook.yml
+  - inventory.ini               
+ -docker/                   
+  - Dockerfile-apache-php
+  - Dockerfile-mysql
+ -k8s/                      
+  - apache-deployment.yaml
+  - mysql-deployment.yaml
+  - mysql-pvc.yaml
+  - pvc.json
+  - services.yaml
 ---
 
 ## Project Overview
